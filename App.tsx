@@ -3,6 +3,7 @@ import React from 'react';
  
 import AppCPF from './views/AppCPF';
 import AppList from './views/AppList';
+import AppForm from './views/AppForm';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'; 
@@ -16,6 +17,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="CPF">
         <Stack.Screen name="CPF" component={AppCPF} />
         <Stack.Screen name="List" component={AppList} />
+        <Stack.Screen name="Form" component={AppForm} />
       </Stack.Navigator>
     </NavigationContainer>
     </>

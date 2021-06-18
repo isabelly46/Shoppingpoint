@@ -14,15 +14,21 @@ import { createStackNavigator } from '@react-navigation/stack';
  
 function AppCPF({ navigation }){
     const [getCPF, setCPF] = useState("");
+    const [getNome, setNome] = useState("");
 
     const setValueCPF: (value: any) => void = (cpf: any) => {
         console.log(cpf);
         setCPF(cpf);
     };
+    
+    const setValueNome: (value: any) => void = (nome: any) => {
+        setNome(nome);
+    };
 
-    const enviarCPF: (value: any) => void  = (value) => {
+    const enviarDados: (value: any) => void  = (value) => {
         navigation.navigate('List', {
-            cpf: getCPF
+            cpf: getCPF,
+            nome: getNome
         });
     };
 
@@ -47,7 +53,7 @@ function AppCPF({ navigation }){
         },
         main: {
             width: '95%',
-            height: '50%',
+            height: 300,
             borderRadius: 4,
             backgroundColor: '#ffff',
             justifyContent: 'center',
@@ -72,12 +78,18 @@ function AppCPF({ navigation }){
                 <Text>Shopping Point</Text>
                 <TextInput
                     style={styles.input}
+                    onChangeText={setValueNome}
+                    value={getNome}
+                    placeholder="NOME"
+                />
+                <TextInput
+                    style={styles.input}
                     onChangeText={setValueCPF}
                     value={getCPF}
                     placeholder="CPF"
                     keyboardType="numeric"
                 />
-                <Button title="Próximo" color="#b30202" onPress={enviarCPF}></Button>
+                <Button title="Próximo" color="#b30202" onPress={enviarDados}></Button>
             </View>
             </View>     
         </>
