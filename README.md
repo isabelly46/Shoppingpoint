@@ -1,5 +1,5 @@
 # Shoppingpoint
-#Grupo
+# Grupo
 - ANDRE AQUILAU
 - GUILHERME ARAUJO
 - ISABELLY CHRISTINA FERREIRA
